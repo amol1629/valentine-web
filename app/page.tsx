@@ -1,51 +1,48 @@
-'use client'
+"use client";
 
-import Image from 'next/image'
-import { motion } from 'framer-motion'
-import { valentineDays } from '@/data/valentineDays'
-import { isUnlocked } from '@/lib/unlockLogic'
-import DayCard from '@/components/DayCard'
+import Image from "next/image";
+import { valentineDays } from "@/data/valentineDays";
+import { isUnlocked } from "@/lib/unlockLogic";
+import DayCard from "@/components/DayCard";
+import GSAPHeartParticles from "@/components/GSAPHeartParticles";
+import HeartFlowCanvas from "@/components/HeartFlowCanvas";
 
 export default function Home() {
 	return (
-		<main className="relative min-h-screen overflow-hidden flex items-center justify-center">
-			{/* Background */}
+		<main className="relative min-h-screen flex items-center justify-center overflow-hidden">
+
 			<Image
 				src="https://t3.ftcdn.net/jpg/07/03/66/40/360_F_703664087_PbvY3jjPE58qANjsoNyeAlU0niMicVRf.jpg"
-				alt="Valentine Background"
 				fill
+				className="object-cover"
+				alt="bg"
 				priority
-				className="object-cover scale-110"
 			/>
 
-			{/* Soft dark overlay */}
-			<div className="absolute inset-0 bg-black/45 backdrop-blur-[2px]" />
+			<div className="absolute inset-0 bg-black/50 backdrop-blur-md" />
 
-			{/* Content */}
-			<motion.div
-				initial={{ opacity: 0, y: 30 }}
-				animate={{ opacity: 1, y: 0 }}
-				transition={{ duration: 1 }}
-				className="relative z-10 w-[92%] max-w-4xl"
-			>
-				{/* Title */}
-				<motion.h1
-					initial={{ opacity: 0, y: -20 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ delay: 0.3 }}
-					className="text-center text-4xl md:text-5xl font-semibold
-          text-white mb-12 tracking-tight"
-				>
-					Valentine Week <span className="text-rose-300">💖</span>
-				</motion.h1>
+			<GSAPHeartParticles />
 
-				{/* Cards */}
-				<div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-					{valentineDays.map((day, index) => (
-						<DayCard key={day.slug} day={day} unlocked={isUnlocked(index)} />
+			<HeartFlowCanvas/>
+
+			<div className="relative z-10 w-[92%] max-w-5xl">
+				<h1 className="text-center text-5xl font-semibold text-pink-300 mb-2">
+					Valentine Week
+				</h1>
+				<p className="text-center text-white/80 mb-12">
+					For Dipali ❤️
+				</p>
+
+				<div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+					{valentineDays.map((day, i) => (
+						<DayCard
+							key={day.slug}
+							day={day}
+							unlocked={isUnlocked(i)}
+						/>
 					))}
 				</div>
-			</motion.div>
+			</div>
 		</main>
-	)
+	);
 }

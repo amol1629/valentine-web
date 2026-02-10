@@ -1,60 +1,72 @@
-'use client'
+"use client";
 
-import Link from 'next/link'
-import { motion } from 'framer-motion'
-import { Lock } from 'lucide-react'
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { Lock } from "lucide-react";
+import { useState } from "react";
+import LockedDayModal from "./LockedDayModal";
 
 export default function DayCard({ day, unlocked }) {
+	const [showModal, setShowModal] = useState(false);
+
 	return (
-		<motion.div
-			whileHover={unlocked ? { y: -8, scale: 1.03 } : {}}
-			transition={{ type: 'spring', stiffness: 200 }}
-			className="relative h-32 rounded-2xl overflow-hidden
-      bg-white/15 backdrop-blur-xl
-      border border-white/20
-      shadow-[0_10px_40px_rgba(0,0,0,0.35)]"
-		>
-			{/* Hover glow */}
-			{unlocked && (
-				<div
-					className="absolute inset-0 opacity-0 hover:opacity-100
-        transition duration-500 bg-gradient-to-br
-        from-rose-400/30 to-pink-500/20"
+		<>
+			<motion.div
+				whileHover={unlocked ? { y: -14, scale: 1.08 } : {}}
+				transition={{ type: "spring", stiffness: 120, damping: 14 }}
+				className="group relative h-64 rounded-3xl overflow-hidden
+        shadow-[0_24px_70px_rgba(0,0,0,0.6)]
+        cursor-pointer"
+				onClick={() => {
+					if (!unlocked) setShowModal(true);
+				}}
+			>
+				{/* BG */}
+				<motion.div
+					className="absolute inset-0 bg-cover bg-center"
+					style={{ backgroundImage: `url(${day.cardBgImage})` }}
+					whileHover={unlocked ? { scale: 1.3 } : {}}
+					transition={{ duration: 1.3 }}
 				/>
-			)}
 
-			{/* Locked overlay */}
-			{!unlocked && (
-				<div
-					className="absolute inset-0 bg-black/55 backdrop-blur-sm
-        flex flex-col items-center justify-center z-10"
-				>
-					<Lock className="text-white mb-1" size={18} />
-					<span className="text-xs text-white/80">Unlocks tomorrow 💝</span>
-				</div>
-			)}
+				<div className="absolute inset-0 bg-black/45" />
 
-			{/* Content */}
-			{unlocked ? (
-				<Link
-					href={`/day/${day.slug}`}
-					className="relative z-20 h-full w-full
-          flex items-center justify-center text-center px-3"
-				>
-					<span className="text-white font-medium text-sm md:text-base">
-						{day.title}
-					</span>
-				</Link>
-			) : (
-				<div
-					className="relative z-20 h-full w-full
-        flex items-center justify-center text-center px-3"
-				>
-					<span className="text-white/50 font-medium text-sm md:text-base">
-						{day.title}
-					</span>
-				</div>
-			)}
-		</motion.div>
-	)
+				{!unlocked && (
+					<div className="absolute inset-0 bg-black/65
+          flex flex-col items-center justify-center z-10">
+						<Lock className="text-white mb-2" />
+						<span className="text-white/80 text-sm">
+							Locked 💝
+						</span>
+					</div>
+				)}
+
+				{unlocked && (
+					<Link
+						href={`/day/${day.slug}`}
+						className="relative z-10 h-full
+            flex flex-col items-center justify-center text-center px-6"
+					>
+						<span
+							className="text-3xl font-semibold"
+							style={{ color: day.accentColor }}
+						>
+							{day.title}
+						</span>
+
+						<span className="mt-2 text-white/90
+            opacity-0 group-hover:opacity-100
+            transition-all duration-300">
+							{day.importance}
+						</span>
+					</Link>
+				)}
+			</motion.div>
+
+			<LockedDayModal
+				open={showModal}
+				onOpenChange={setShowModal}
+			/>
+		</>
+	);
 }

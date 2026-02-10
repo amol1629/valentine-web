@@ -13,3 +13,132 @@
 .animate-gradientSlow {
   animation: gradientSlow 18s ease infinite;
 }
+
+@keyframes softGlow {
+  0%, 100% { box-shadow: 0 0 0 rgba(255,255,255,0); }
+  50% { box-shadow: 0 0 20px rgba(255,255,255,0.08); }
+}
+
+.animate-softGlow {
+  animation: softGlow 4s ease-in-out infinite;
+}
+
+@keyframes valentinePulseStrong {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+.animate-valentinePulseStrong {
+  animation: valentinePulseStrong 3s ease-in-out infinite;
+}
+
+@keyframes softGlow {
+  0%, 100% { box-shadow: 0 0 0 rgba(255,255,255,0); }
+  50% { box-shadow: 0 0 20px rgba(255,255,255,0.08); }
+}
+
+.animate-softGlow {
+  animation: softGlow 4s ease-in-out infinite;
+}
+
+@keyframes valentinePulseStrong {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
+
+.animate-valentinePulseStrong {
+  animation: valentinePulseStrong 3s ease-in-out infinite;
+}
+
+.heart-shape {
+  position: relative;
+  transform: rotate(-45deg);
+  border-radius: 12px;
+}
+
+.heart-shape::before,
+.heart-shape::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  border-radius: 50%;
+}
+
+.heart-shape::before {
+  top: -50%;
+  left: 0;
+}
+
+.heart-shape::after {
+  left: 50%;
+  top: 0;
+}
+
+/* Fix content rotation */
+.heart-shape > * {
+  transform: rotate(45deg);
+}
+
+/* 3D helpers */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* 💓 Soft heartbeat */
+@keyframes heartBeat {
+  0% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(1.03);
+  }
+  28% {
+    transform: scale(1);
+  }
+  42% {
+    transform: scale(1.03);
+  }
+  70% {
+    transform: scale(1);
+  }
+}
+
+.animate-heartbeat {
+  animation: heartBeat 3.5s ease-in-out infinite;
+}
+
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* 💓 soft heartbeat */
+@keyframes heartBeat {
+  0% { transform: scale(1); }
+  14% { transform: scale(1.04); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.04); }
+  70% { transform: scale(1); }
+}
+
+.animate-heartbeat {
+  animation: heartBeat 3.5s ease-in-out infinite;
+}
