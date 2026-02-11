@@ -23,3 +23,7 @@ export type LockedDayModalProps = {
 export type ValentineFinaleProps = {
   message: string;
 }
+
+export type DayExperienceProps = {
+  day: ValentineDay;
+};

@@ -4,9 +4,9 @@ import { motion } from 'framer-motion'
 import Firecracker from '@/components/Firecracker'
 import FloatingParticles from '@/components/FloatingParticles'
 import HomeButton from '@/components/HomeButton'
-import { DayCardProps } from '@/types/valentine'
+import { DayCardProps, DayExperienceProps } from '@/types/valentine'
 
-export default function DayExperience({ day } : DayCardProps) {
+export default function DayExperience({ day }: DayExperienceProps) {
 	return (
 		<motion.div
 			initial={{ scale: 0.8, opacity: 0 }}
