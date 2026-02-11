@@ -9,3 +9,17 @@ export type ValentineDay = {
   line: string;
 	accentColor: string;
 };
+
+export type DayCardProps = {
+	day: ValentineDay;
+	unlocked: boolean;
+};
+
+export type LockedDayModalProps = {
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+};
+
+export type ValentineFinaleProps = {
+  message: string;
+}

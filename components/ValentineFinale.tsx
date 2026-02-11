@@ -2,8 +2,9 @@
 
 import { motion } from 'framer-motion'
 import FloatingHearts from './FloatingHearts'
+import { ValentineFinaleProps } from '@/types/valentine'
 
-export default function ValentineFinale({ message }) {
+export default function ValentineFinale({ message }: ValentineFinaleProps) {
 	return (
 		<motion.div
 			initial={{ opacity: 0 }}

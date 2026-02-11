@@ -4,8 +4,9 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { Lock } from "lucide-react";
 import { getUnlockText } from "@/lib/unlockText";
+import { DayCardProps } from "@/types/valentine";
 
-export default function HeartFlipCard({ day, unlocked }) {
+export default function HeartFlipCard({ day, unlocked } : DayCardProps) {
   return (
     <div className="relative w-[260px] h-[260px] perspective-1000">
       {/* Back stacked hearts (depth) */}

@@ -4,8 +4,9 @@ import * as Dialog from "@radix-ui/react-dialog";
 import { motion, AnimatePresence } from "framer-motion";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import LottieHeart from "./LottieHeart";
+import { LockedDayModalProps } from "@/types/valentine";
 
-export default function LockedDayModal({ open, onOpenChange }) {
+export default function LockedDayModal({ open, onOpenChange }: LockedDayModalProps) {
   return (
     <Dialog.Root open={open} onOpenChange={onOpenChange}>
       <AnimatePresence>

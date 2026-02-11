@@ -5,12 +5,9 @@ import Link from "next/link";
 import { Lock } from "lucide-react";
 import { useState } from "react";
 import LockedDayModal from "./LockedDayModal";
-import { ValentineDay } from "@/types/valentine";
+import { DayCardProps } from "@/types/valentine";
 
-type DayCardProps = {
-	day: ValentineDay;
-	unlocked: boolean;
-};
+
 
 export default function DayCard({ day , unlocked } : DayCardProps) {
 	const [showModal, setShowModal] = useState(false);
