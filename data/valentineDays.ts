@@ -28,7 +28,8 @@ HAPPY ROSE DAY!`,
       '/photos/rose-4.jpeg',
       '/photos/rose-5.jpeg',
 
-  ],
+    ],
+    music: '/music/propose-day-song.mp3'
   },
   {
     slug: 'propose-day',
@@ -44,7 +45,7 @@ HAPPY ROSE DAY!`,
 When EYES could SPEAK volumes
 When a SMILE can confirm I am THERE
 Then why do we need words to say 'I LOVE YOU.'
-Happy Teddy Bear Day!`,
+Happy Promise Day!`,
     shayari: `मेरी रूह को अपनी रूह में मिलाकर,
 मुझे गुमनाम कर दो।
 तुम्हें देख कर लोग मुझे पहचाने,

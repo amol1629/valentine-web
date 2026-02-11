@@ -9,6 +9,7 @@ export type ValentineDay = {
   line: string;
   accentColor: string;
   photos?: string[];
+  music?: string   // 👈 ADD THIS
 };
 
 export type DayCardProps = {

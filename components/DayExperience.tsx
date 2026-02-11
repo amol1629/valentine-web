@@ -6,9 +6,49 @@ import Firecracker from '@/components/Firecracker'
 import FloatingParticles from '@/components/FloatingParticles'
 import HomeButton from '@/components/HomeButton'
 import { DayExperienceProps } from '@/types/valentine'
+import { useEffect, useRef, useState } from 'react'
 
 export default function DayExperience({ day }: DayExperienceProps) {
 	const photos = day.photos ?? []
+
+	/* ================= MUSIC LOGIC ================= */
+
+	const audioRef = useRef<HTMLAudioElement | null>(null)
+	const [muted, setMuted] = useState(false)
+
+	useEffect(() => {
+		if (!audioRef.current || !day.music) return
+
+		const audio = audioRef.current
+		audio.volume = 0
+		audio.play().catch(() => {
+			// autoplay might be blocked
+		})
+
+		// Smooth fade in
+		let vol = 0
+		const fade = setInterval(() => {
+			if (vol < 0.5) {
+				vol += 0.05
+				audio.volume = vol
+			} else {
+				clearInterval(fade)
+			}
+		}, 200)
+
+		return () => {
+			audio.pause()
+			audio.currentTime = 0
+		}
+	}, [day.music])
+
+	const toggleMute = () => {
+		if (!audioRef.current) return
+		audioRef.current.muted = !muted
+		setMuted(!muted)
+	}
+
+	/* ================= LAYOUT ================= */
 
 	const desktopPositions = [
 		{ top: '6%', left: '10%' },
@@ -25,6 +65,39 @@ export default function DayExperience({ day }: DayExperienceProps) {
 	return (
 		<div className="min-h-screen relative overflow-hidden">
 
+			{/* AUDIO ELEMENT */}
+			{day.music && (
+				<audio
+					ref={audioRef}
+					src={day.music}
+					loop
+				/>
+			)}
+
+			{/* MUTE BUTTON */}
+			{day.music && (
+				<button
+					onClick={toggleMute}
+					className="
+            fixed
+            top-6
+            right-6
+            z-50
+            bg-white/20
+            backdrop-blur-lg
+            border border-white/30
+            text-white
+            px-4 py-2
+            rounded-full
+            shadow-lg
+            hover:scale-105
+            transition
+          "
+				>
+					{muted ? '🔇 Unmute' : '🔊 Mute'}
+				</button>
+			)}
+
 			{/* Background */}
 			<div
 				className="absolute inset-0 bg-cover bg-center"
@@ -36,7 +109,7 @@ export default function DayExperience({ day }: DayExperienceProps) {
 			<Firecracker />
 			<FloatingParticles />
 
-			{/* ================= MOBILE LAYOUT ================= */}
+			{/* ================= MOBILE ================= */}
 			<div className="md:hidden relative z-20 flex flex-col items-center px-6 pt-20 pb-16 text-center text-white">
 
 				{/* Top Photos */}
@@ -57,16 +130,14 @@ export default function DayExperience({ day }: DayExperienceProps) {
                 shadow-[0_12px_35px_rgba(255,105,135,0.35)]
               "
 						>
-							<div className="backdrop-blur-sm rounded-xl">
-								<div className="rounded-lg overflow-hidden">
-									<Image
-										src={photo}
-										alt="memory"
-										width={300}
-										height={600}
-										className="w-full h-48 object-cover"
-									/>
-								</div>
+							<div className="rounded-lg overflow-hidden">
+								<Image
+									src={photo}
+									alt="memory"
+									width={300}
+									height={600}
+									className="w-full h-48 object-cover"
+								/>
 							</div>
 						</motion.div>
 					))}
@@ -83,7 +154,7 @@ export default function DayExperience({ day }: DayExperienceProps) {
 						{day.title}
 					</motion.h1>
 
-					<p className="text-base mb-6 opacity-90">
+					<p className="text-base mb-6 opacity-90 whitespace-pre-line">
 						{day.line}
 					</p>
 
@@ -115,24 +186,21 @@ export default function DayExperience({ day }: DayExperienceProps) {
                 shadow-[0_12px_35px_rgba(255,105,135,0.35)]
               "
 						>
-							<div className="backdrop-blur-sm  rounded-xl">
-								<div className="rounded-lg overflow-hidden">
-									<Image
-										src={photo}
-										alt="memory"
-										width={300}
-										height={600}
-										className="w-full h-48 object-cover"
-									/>
-								</div>
+							<div className="rounded-lg overflow-hidden">
+								<Image
+									src={photo}
+									alt="memory"
+									width={300}
+									height={600}
+									className="w-full h-48 object-cover"
+								/>
 							</div>
 						</motion.div>
 					))}
 				</div>
-
 			</div>
 
-			{/* ================= DESKTOP LAYOUT ================= */}
+			{/* ================= DESKTOP ================= */}
 			<div className="hidden md:flex relative z-20 items-center justify-center min-h-screen px-20 text-center text-white">
 
 				<div className="max-w-2xl">
@@ -160,7 +228,7 @@ export default function DayExperience({ day }: DayExperienceProps) {
 				</div>
 			</div>
 
-			{/* Desktop Surround Frames */}
+			{/* Desktop Frames */}
 			<div className="hidden md:block absolute inset-0 z-10 pointer-events-none">
 				{photos.slice(0, 6).map((photo, index) => {
 					const pos = desktopPositions[index]
@@ -173,8 +241,7 @@ export default function DayExperience({ day }: DayExperienceProps) {
 							className="absolute"
 							style={{
 								...pos,
-								transform:
-									index % 2 === 0 ? 'rotate(-6deg)' : 'rotate(6deg)',
+								transform: index % 2 === 0 ? 'rotate(-6deg)' : 'rotate(6deg)',
 							}}
 						>
 							<div
@@ -186,16 +253,14 @@ export default function DayExperience({ day }: DayExperienceProps) {
                   w-44
                 "
 							>
-								<div className=" backdrop-blur-md  rounded-2xl">
-									<div className="rounded-xl overflow-hidden">
-										<Image
-											src={photo}
-											alt="memory"
-											width={500}
-											height={600}
-											className="w-full h-52 object-cover"
-										/>
-									</div>
+								<div className="rounded-xl overflow-hidden">
+									<Image
+										src={photo}
+										alt="memory"
+										width={500}
+										height={600}
+										className="w-full h-52 object-cover"
+									/>
 								</div>
 							</div>
 						</motion.div>
