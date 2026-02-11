@@ -11,8 +11,24 @@ export const valentineDays: ValentineDay[]= [
       'https://www.livehindustan.com/lh-img/smart/img/2025/02/06/1200x900/drgse_1738838513366_1738838525474.jpg',
     bgImage:
       'https://images.openai.com/static-rsc-3/z8cPuSqvfmN3-QVmIJe-5CCnwk-oENnKi4XzDOkvuD20h-_r1NuJtLz1cQu8yI89aM-jgMGBLkCXud2VeCTRDHvEI-mr5PoTGC47NLnuUpw?purpose=fullsize&v=1',
-    line: 'Just like a rose, my love blooms only for you.',
-    shayari: 'Ek gulaab sirf tere naam,\nMohabbat meri bas tere saath.',
+    line: `You are a Rose of My Dream,
+You are a Rose of My Heart,
+You are a Rose of My Smile,
+You are a Rose of My Life...
+HAPPY ROSE DAY!`,
+    shayari: `मेरी दीवानगी की कोई हद नहीं
+तेरी सूरत के सिवा मुझे कुछ याद नहीं
+मैं गुलाब हूं तेरे गुलशन का
+तेरे सिवाए मुझपर किसी का हक नहीं`,
+    photos: [
+      '/photos/rose-6.jpg',
+      '/photos/rose-1.jpeg',
+      '/photos/rose-2.jpeg',
+      '/photos/rose-3.jpeg',
+      '/photos/rose-4.jpeg',
+      '/photos/rose-5.jpeg',
+
+  ],
   },
   {
     slug: 'propose-day',
@@ -24,8 +40,23 @@ export const valentineDays: ValentineDay[]= [
       'https://c.ndtvimg.com/2019-02/nga2nhv_propose-day-images-happy-propose-day-wishes_625x300_07_February_19.jpg',
     bgImage:
       'https://images.openai.com/static-rsc-3/VqoYlJ4fmj0KnDZo-oWMQ-LZp0XD74F9PjVGDrnNuDbRLtByBDNszFUy2AqhYrtbsjsM5CuYkb9CSaV-leCIJjfKGVcBfNiBAYE50HLp3jU?purpose=fullsize&v=1',
-    line: 'If hearts could speak, mine says your name.',
-    shayari: 'Dil ne kaha, izhaar kar loon,\nTujhe apni duniya maan loon.',
+    line: `When a TOUCH could HEAL a wound
+When EYES could SPEAK volumes
+When a SMILE can confirm I am THERE
+Then why do we need words to say 'I LOVE YOU.'
+Happy Teddy Bear Day!`,
+    shayari: `मेरी रूह को अपनी रूह में मिलाकर,
+मुझे गुमनाम कर दो।
+तुम्हें देख कर लोग मुझे पहचाने,
+यूं खुद को मेरा हमनाम कर दो।`,
+    photos: [
+      '/photos/propose-6.jpg',
+      '/photos/propose-1.jpeg',
+      '/photos/propose-2.jpeg',
+      '/photos/propose-3.jpeg',
+      '/photos/propose-4.jpeg',
+      '/photos/propose-5.jpeg',
+    ]
   },
   {
     slug: 'chocolate-day',
@@ -37,10 +68,26 @@ export const valentineDays: ValentineDay[]= [
     cardBgImage:
       'https://assets.thehansindia.com/h-upload/2025/02/08/1521753-chocolate.jpg',
     bgImage:
-      'https://images.unsplash.com/photo-1511385348-a52b4a160dc2?auto=format&fit=crop&w=1920&q=80',
-    line: 'You make life sweeter just by being in it.',
+      'https://img.mathrubhumi.com/view/acePublic/alias/contentid/1p2besunm46xzloyxgc/1/chocolate-day-jpg.webp?$p=f162f31&f=16:9&w=1080&q=0.8',
+    line: `My sweet valentine, you are a chocolate so you are the sweetest,
+    you are a star so you are the brightest,
+    you are a lovely girl so you are my dearest!
+    Happy Chocolate Day!`,
     shayari:
-      'Chocolate se bhi zyada meethi hai tu,\nHar pal meri khushi hai tu.',
+      ` मैं डेरी हूं तो तू मिल्क है,
+      मैं किट हूं तो तू कैट है,
+      मैं फाइव हूं तो तू स्टार है,
+      वैसे ही मैं स्वीट हूं तो तू मेरी स्वीटहार्ट है.`,
+
+     photos: [
+       '/photos/chocolate-6.webp',
+      '/photos/chocolate-1.jpeg',
+      '/photos/chocolate-2.jpeg',
+      '/photos/chocolate-3.jpeg',
+      '/photos/chocolate-4.jpeg',
+      '/photos/chocolate-5.jpeg',
+
+  ],
   },
   {
     slug: 'teddy-day',
@@ -51,9 +98,24 @@ export const valentineDays: ValentineDay[]= [
     cardBgImage:
       'https://ocakes.in/blog/assets/admin/images/uploads/Banner-teddy-day-2025-best-wishes-quotes-instagram-captions-gift-ideas.webp',
     bgImage:
-      'https://images.unsplash.com/photo-1545235617-9465d2a55698?auto=format&fit=crop&w=1920&q=80',
-    line: 'Whenever I miss you, I hug the thought of you.',
-    shayari: 'Teddy nahi, tu chahiye,\nHar din bas tera saath chahiye.',
+      'https://i.pinimg.com/736x/b1/8f/fc/b18ffc5a92ba20ce7458c4d13b8c33b5.jpg',
+    line: `You always live within me,
+    You always laugh within me, And makes me happy and smiling,
+    You always give me a soft and Touchy feeling just like a lovely teddy.
+    Happy teddy day.`,
+    shayari: ` टेडी की तरह तुमको सीने से लगाना है,
+    तुम्हारे साथ हर पल मुस्कुराना है,
+    काश ये Teddy Day कभी खत्म न हो,
+    क्योंकि तुम्हें हर दिन प्यार जताना है`,
+    photos: [
+      '/photos/teddy-6.png',
+      '/photos/teddy-1.jpeg',
+      '/photos/teddy-2.jpeg',
+      '/photos/teddy-3.jpeg',
+      '/photos/teddy-4.jpeg',
+      '/photos/teddy-5.jpeg',
+
+  ],
   },
   {
     slug: 'promise-day',
@@ -64,10 +126,26 @@ export const valentineDays: ValentineDay[]= [
     cardBgImage:
       'https://kalingatv.com/wp-content/uploads/2022/02/promise-day.jpg',
     bgImage:
-      'https://i.pinimg.com/736x/b6/3d/d2/b63dd2eca7961150868bda3a9ded6321.jpg',
-    line: 'I promise to choose you, every single day.',
+      'https://assets.thehansindia.com/h-upload/2025/02/11/1522685-happy-promise-day-2025-20-heartfelt-wishes-and-sweet-promises-for-your-loved-ones.webp',
+    line: `This year, promise day is so lucky for me,
+I am here to promise you that I will love you every day,
+I will care for you a lot,
+I will always be by your side.
+Happy Promise Day!`,
     shayari:
-      'Waada hai tumse, kabhi na chhodunga,\nHar mod pe sirf tumhara haath pakdunga.',
+      `हर पल प्यार का इरादा है आपसे,
+अपनापन ही कुछ इतना ज्यादा है आपसे,
+न सोचेंगे सिर्फ उम्र भर के लिए,
+कयामत तक साथ निभाएंगे, ये वादा है आपसे।`,
+    photos: [
+      '/photos/promise-6.png',
+      '/photos/promise-1.jpeg',
+      '/photos/promise-2.jpeg',
+      '/photos/promise-3.jpeg',
+      '/photos/promise-4.jpeg',
+      '/photos/promise-5.jpeg',
+
+    ]
   },
   {
     slug: 'hug-day',

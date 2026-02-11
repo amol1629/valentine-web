@@ -7,7 +7,8 @@ export type ValentineDay = {
   bgImage: string;
   shayari: string;
   line: string;
-	accentColor: string;
+  accentColor: string;
+  photos?: string[];
 };
 
 export type DayCardProps = {
