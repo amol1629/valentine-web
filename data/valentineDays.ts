@@ -50,7 +50,7 @@ Happy Teddy Bear Day!`,
 तुम्हें देख कर लोग मुझे पहचाने,
 यूं खुद को मेरा हमनाम कर दो।`,
     photos: [
-      '/photos/propose-6.jpg',
+      '/photos/propose-6.webp',
       '/photos/propose-1.jpeg',
       '/photos/propose-2.jpeg',
       '/photos/propose-3.jpeg',
