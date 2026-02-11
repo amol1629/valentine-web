@@ -1,4 +1,6 @@
-export const valentineDays = [
+import { ValentineDay } from "@/types/valentine";
+
+export const valentineDays: ValentineDay[]= [
   {
     slug: 'rose-day',
     title: 'Rose Day 🌹',
@@ -39,7 +41,7 @@ export const valentineDays = [
     line: 'You make life sweeter just by being in it.',
     shayari:
       'Chocolate se bhi zyada meethi hai tu,\nHar pal meri khushi hai tu.',
-  },	
+  },
   {
     slug: 'teddy-day',
     title: 'Teddy Day 🧸',
