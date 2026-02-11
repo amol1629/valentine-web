@@ -63,8 +63,8 @@ export default function DayExperience({ day }: DayExperienceProps) {
 										src={photo}
 										alt="memory"
 										width={300}
-										height={400}
-										className="w-full h-32 object-cover"
+										height={600}
+										className="w-full h-48 object-cover"
 									/>
 								</div>
 							</div>
@@ -115,14 +115,14 @@ export default function DayExperience({ day }: DayExperienceProps) {
                 shadow-[0_12px_35px_rgba(255,105,135,0.35)]
               "
 						>
-							<div className="backdrop-blur-sm p-0 rounded-xl">
+							<div className="backdrop-blur-sm  rounded-xl">
 								<div className="rounded-lg overflow-hidden">
 									<Image
 										src={photo}
 										alt="memory"
 										width={300}
-										height={400}
-										className="w-full h-32 object-cover"
+										height={600}
+										className="w-full h-48 object-cover"
 									/>
 								</div>
 							</div>
