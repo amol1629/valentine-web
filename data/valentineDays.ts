@@ -57,7 +57,8 @@ Happy Promise Day!`,
       '/photos/propose-3.jpeg',
       '/photos/propose-4.jpeg',
       '/photos/propose-5.jpeg',
-    ]
+    ],
+    music: '/music/hug-day-song.mp3'
   },
   {
     slug: 'chocolate-day',
